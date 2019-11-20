@@ -13,7 +13,7 @@ const AllLicenses = (props) => {
   })
 
   return(
-    <div>
+    <div className="table-responsive">
       <table className="table">
         <thead>
           <tr>
