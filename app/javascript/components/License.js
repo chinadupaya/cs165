@@ -120,7 +120,7 @@ class License extends React.Component {
         {conditions}
         {eval_name}
         {organ_donor}
-        <td><button onClick={()=> this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button></td>
+        <td><button className="btn btn-outline-primary" onClick={()=> this.handleEdit()}>{this.state.editable? 'Submit' : 'Edit'}</button></td>
         <td><button className="btn btn-outline-danger" onClick={() => this.props.handleDelete(this.props.license.id)}>Delete</button></td>
     </React.Fragment>
     );
