@@ -10,10 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2014_07_07_111715) do
+ActiveRecord::Schema.define(version: 2019_11_20_103843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "condition"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "field_office"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "license_infos", force: :cascade do |t|
+    t.string "license_num"
+    t.integer "restriction_code"
+    t.string "application_type"
+    t.string "license_type"
+    t.string "skill_acquire"
+    t.string "conditions"
+    t.string "eval_name"
+    t.string "string"
+    t.string "organ_donor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "licenses", force: :cascade do |t|
+    t.string "license_num"
+    t.integer "restriction_code"
+    t.string "application_type"
+    t.string "license_type"
+    t.string "skill_acquire"
+    t.string "conditions"
+    t.string "eval_name"
+    t.string "organ_donor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restrictions", force: :cascade do |t|
+    t.integer "code"
+    t.text "meaning"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "widgets", force: :cascade do |t|
     t.string "name"

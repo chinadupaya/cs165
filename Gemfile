@@ -18,6 +18,8 @@ gem 'listen'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+#for styling
+gem 'bootstrap', '~> 4.1.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -39,3 +41,6 @@ gem 'puma'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Integrate React with rails
+gem 'webpacker'
+gem 'react-rails'

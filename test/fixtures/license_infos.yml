@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  license_num: MyString
+  restriction_code: 
+  application_type: MyString
+  license_type: MyString
+  skill_acquire: MyString
+  conditions: MyString
+  eval_name: MyString
+  string: MyString
+  organ_donor: MyString
+  string: MyString
+
+two:
+  license_num: MyString
+  restriction_code: 
+  application_type: MyString
+  license_type: MyString
+  skill_acquire: MyString
+  conditions: MyString
+  eval_name: MyString
+  string: MyString
+  organ_donor: MyString
+  string: MyString
