@@ -38,7 +38,7 @@ class Body extends React.Component {
       conditions:conditions, 
       eval_name:eval_name, 
       organ_donor:organ_donor} })
-    fetch('https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/', {
+    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
