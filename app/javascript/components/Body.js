@@ -5,6 +5,7 @@ import AllRestrictions from "./AllRestrictions"
 import AllEmployees from "./AllEmployees"
 import AllLicenses from "./AllLicenses"
 import NewLicense from "./NewLicense"
+import AllJoins from "./AllJoins"
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,7 +21,8 @@ class Body extends React.Component {
       conditions:[],
       restrictions:[],
       employees:[],
-      licenses:[]
+      licenses:[],
+      joins:[]
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.addNewLicense = this.addNewLicense.bind(this)
@@ -38,7 +40,9 @@ class Body extends React.Component {
       conditions:conditions, 
       eval_name:eval_name, 
       organ_donor:organ_donor} })
-    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/`, {
+      /* http://localhost:3000/
+      https://stormy-citadel-68784.herokuapp.com/ */
+    fetch(`http://localhost:3000/api/v1/licenses/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -55,7 +59,7 @@ class Body extends React.Component {
     })
   }
   handleDelete(id){
-    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/${id}`, 
+    fetch(`http://localhost:3000/api/v1/licenses/${id}`, 
     {
       method: 'DELETE',
       headers: {
@@ -72,7 +76,7 @@ class Body extends React.Component {
     })
   }
   handleUpdate(license){
-    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/${license.id}`, 
+    fetch(`http://localhost:3000/api/v1/licenses/${license.id}`, 
     {
       method: 'PUT',
       body: JSON.stringify({license: license}),
@@ -103,11 +107,19 @@ class Body extends React.Component {
     fetch('/api/v1/licenses.json')
       .then((response) => {return response.json()})
       .then((data) => {this.setState({licenses: data})})
+    fetch('api/v1/joins.json')
+      .then((response)=>{return response.json()})
+      .then((data)=>{this.setState({joins:data})})
   }
   render(){
       return(
           <div>
             <Switch>
+              <Route path="/home">
+                <div>
+                  <h1>HI WELCOME TO LICENSE PAGE</h1>
+                </div>
+              </Route>
               <Route path="/conditions">
                 <AllConditions conditions={this.state.conditions}/>
               </Route>
@@ -123,6 +135,9 @@ class Body extends React.Component {
                 <AllLicenses licenses = {this.state.licenses}
                 handleDelete = {this.handleDelete}
                 handleUpdate = {this.handleUpdate}/> 
+              </Route>
+              <Route path="/joins">
+                <AllJoins joins={this.state.joins}/>
               </Route>
             </Switch>
           </div>

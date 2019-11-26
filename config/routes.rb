@@ -5,6 +5,7 @@ Rails.application.routes.draw do
      resources :restrictions, only: [:index, :create, :destroy, :update]
      resources :employees, only: [:index, :create, :destroy, :update]
      resources :licenses, only: [:index, :create, :destroy, :update]
+     resources :joins, only: [:index]
     end 
   end 
   

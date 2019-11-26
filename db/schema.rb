@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_103843) do
     t.string "skill_acquire"
     t.string "conditions"
     t.string "eval_name"
-    t.string "string"
     t.string "organ_donor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

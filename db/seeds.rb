@@ -5,12 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-conditions = ['A', 'B', 'C', 'D', 'E']
+conditions = ['A', 'B', 'C', 'D', 'E', 'None']
 descriptions = ["Wearing corrective lenses.", 
 "Drive only with customized vehicle.",
 "Drive only w/ special equipment.",
 "Daylight driving only.",
-"With hearing aid."]
+"With hearing aid.",
+"None."]
 enum = conditions.each
 enum2 = descriptions.each
 loop do
@@ -39,6 +40,6 @@ restriction_code:1,
 application_type: "asdf",
 license_type:"asdf", 
 skill_acquire:"skill_acquire", 
-conditions:"conditions", 
+conditions:"A", 
 eval_name:"eval_name", 
 organ_donor:"organ_donor")

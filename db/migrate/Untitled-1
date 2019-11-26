@@ -1,0 +1,2 @@
+rails g model Employee name:string field_office:string
+rails g model License_Info license_num:string restriction_code:int application_type:string license_type:string skill_acquire:string conditions:string eval_name: string organ_donor: string
