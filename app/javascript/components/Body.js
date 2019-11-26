@@ -42,7 +42,7 @@ class Body extends React.Component {
       organ_donor:organ_donor} })
       /* http://localhost:3000/
       https://stormy-citadel-68784.herokuapp.com/ */
-    fetch(`http://localhost:3000/api/v1/licenses/`, {
+    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ class Body extends React.Component {
     })
   }
   handleDelete(id){
-    fetch(`http://localhost:3000/api/v1/licenses/${id}`, 
+    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/${id}`, 
     {
       method: 'DELETE',
       headers: {
@@ -76,7 +76,7 @@ class Body extends React.Component {
     })
   }
   handleUpdate(license){
-    fetch(`http://localhost:3000/api/v1/licenses/${license.id}`, 
+    fetch(`https://stormy-citadel-68784.herokuapp.com/api/v1/licenses/${license.id}`, 
     {
       method: 'PUT',
       body: JSON.stringify({license: license}),
